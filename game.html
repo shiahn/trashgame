@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html>
-<style>
-#classroom{
-    width: 900px;
-    height: 550px;
-    position: absolute;
-    left: 50px;
-    top: 50px;
-}
-#animate {
-    width: 80px;
-    height: 90px;
-    position: absolute;
-    top: 250px;
-    left: 100px;
-}
-    #trashbin {
-        width: 150px;
-        height: 200px;
-        position: absolute;
-        top: 200px;
-        left: 740px;
+  <style>
+    #classroom {
+      width: 900px;
+      height: 550px;
+      position: absolute;
+      left: 50px;
+      top: 50px;
     }
-    
-</style>
-<script>
-function myMove() {
-    var elem = document.getElementById("animate");
-    var x = 0;
-    var id = setInterval(frame, 0.001);
-    function frame() {
-      if (x == 800) {
-        clearInterval(id);
-      } else {
-        x += 1;
-        var y = 250 + Math.floor(50*Math.sin(0.03*x));
-        elem.style.top = y + 'px';
-        elem.style.left = x + 'px';
+    #animate {
+      width: 80px;
+      height: 90px;
+      position: absolute;
+      top: 250px;
+      left: 100px;
+    }
+    #trashbin {
+      width: 150px;
+      height: 200px;
+      position: absolute;
+      top: 200px;
+      left: 740px;
+    }
+  </style>
+  <script>
+    function myMove() {
+      var elem = document.getElementById('animate');
+      var x = 0;
+      var id = setInterval(frame, 0.001);
+      function frame() {
+        if (x == 800) {
+          clearInterval(id);
+        } else {
+          x += 1;
+          var y = 250 + Math.floor(50 * Math.sin(0.03 * x));
+          elem.style.top = y + 'px';
+          elem.style.left = x + 'px';
+        }
       }
-   }
-}
-</script>
+    }
+  </script>
 
-<body>
+  <body>
+    <p>
+      <button onclick="myMove()">throw</button>
+    </p>
+    <p>Gret work!</p>
 
-<p>
-<button onclick="myMove()">throw</button>
-</p>
-
-<img src="classroom.webp" id="classroom" />
-<img src="Paperball.png" id=animate />
-<img src="images.jpeg" id="trashbin"/>
-
-</body>
+    <img src="classroom.webp" id="classroom" />
+    <img src="Paperball.png" id="animate" />
+    <img src="images.jpeg" id="trashbin" />
+  </body>
 </html>
